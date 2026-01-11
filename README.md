@@ -1,26 +1,25 @@
 # Hyprland Script
 
-Hyprland Script is a simple and modular Hyprland environment bootstrapper.
-It aims to provide a reproducible and understandable way to install and configure
-a basic Hyprland setup on Arch Linux.
-
-This project is mainly intended for learning purposes and experimentation.
+Hyprland Script is a simple, modular, and safe installer for a Hyprland environment
+on Arch Linux.
 
 ## Features
 
-- Automated Hyprland installation (Arch Linux)
-- Modular install scripts
-- Clean and readable structure
-- Easy to extend and customize
+- Installs Hyprland and essential packages
+- Automatically clones and sets up hyprland-dotfiles
+- Modular scripts for future extensions (Waybar, themes, etc.)
+- Safe config copy (doesn't overwrite existing files)
 
 ## Requirements
 
-- Arch Linux (or Arch-based distribution)
+- Arch Linux or Arch-based distro
 - Bash
+- Git
 - Internet connection
 - User with sudo privileges
 
-## arboresence 
+## structure:
+
 hyprland-script/
 ├── install.sh
 ├── scripts/
@@ -35,11 +34,11 @@ hyprland-script/
 └── LICENSE
 
 
+
 ## Installation
 
 ```bash
-git clone https://github.com/Yugos06>/hyprland-script.git
+git clone https://github.com/Yugos06/hyprland-script.git
 cd hyprland-script
 chmod +x install.sh
 ./install.sh
-
