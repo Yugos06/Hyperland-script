@@ -27,3 +27,17 @@ git clone https://github.com/Yugos06>/hyprland-script.git
 cd hyprland-script
 chmod +x install.sh
 ./install.sh
+
+here is the structure:
+
+hyprland-script/
+├── install.sh
+├── scripts/
+│ └── check-deps.sh
+├── config/
+│ └── hypr/
+├── docs/
+│ ├── installation.md
+│ └── architecture.md
+├── CHANGELOG.md
+└── .gitignore
