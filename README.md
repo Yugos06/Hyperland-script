@@ -20,22 +20,19 @@ This project is mainly intended for learning purposes and experimentation.
 - Internet connection
 - User with sudo privileges
 
-structure:
-
+## arboresence 
 hyprland-script/
 ├── install.sh
 ├── scripts/
-│   ├── install-packages.sh
 │   ├── check-deps.sh
-│   └── setup-hypr-config.sh
+│   ├── install-packages.sh
+│   └── setup-dotfiles.sh
 ├── config/
 │   └── hypr/
-│       └── hyprland.conf
 ├── docs/
 ├── README.md
+├── CHANGELOG.md
 └── LICENSE
-
-
 
 
 ## Installation
@@ -45,5 +42,4 @@ git clone https://github.com/Yugos06>/hyprland-script.git
 cd hyprland-script
 chmod +x install.sh
 ./install.sh
-
 
