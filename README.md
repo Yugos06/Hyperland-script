@@ -20,6 +20,24 @@ This project is mainly intended for learning purposes and experimentation.
 - Internet connection
 - User with sudo privileges
 
+structure:
+
+hyprland-script/
+├── install.sh
+├── scripts/
+│   ├── install-packages.sh
+│   ├── check-deps.sh
+│   └── setup-hypr-config.sh
+├── config/
+│   └── hypr/
+│       └── hyprland.conf
+├── docs/
+├── README.md
+└── LICENSE
+
+
+
+
 ## Installation
 
 ```bash
@@ -28,16 +46,4 @@ cd hyprland-script
 chmod +x install.sh
 ./install.sh
 
-here is the structure:
 
-hyprland-script/
-├── install.sh
-├── scripts/
-│ └── check-deps.sh
-├── config/
-│ └── hypr/
-├── docs/
-│ ├── installation.md
-│ └── architecture.md
-├── CHANGELOG.md
-└── .gitignore
