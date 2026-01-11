@@ -23,7 +23,7 @@ This project is mainly intended for learning purposes and experimentation.
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/hyprland-script.git
+git clone https://github.com/Yugos06>/hyprland-script.git
 cd hyprland-script
 chmod +x install.sh
 ./install.sh
