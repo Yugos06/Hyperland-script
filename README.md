@@ -1,2 +1,29 @@
-# Hyperland-script
-I'm new to the world of development and I'd like to expand my knowledge, so here's a Hyperland installation script for testing. Feel free to try it; it's currently at version 0.01.
+# Hyprland Script
+
+Hyprland Script is a simple and modular Hyprland environment bootstrapper.
+It aims to provide a reproducible and understandable way to install and configure
+a basic Hyprland setup on Arch Linux.
+
+This project is mainly intended for learning purposes and experimentation.
+
+## Features
+
+- Automated Hyprland installation (Arch Linux)
+- Modular install scripts
+- Clean and readable structure
+- Easy to extend and customize
+
+## Requirements
+
+- Arch Linux (or Arch-based distribution)
+- Bash
+- Internet connection
+- User with sudo privileges
+
+## Installation
+
+```bash
+git clone https://github.com/<your-username>/hyprland-script.git
+cd hyprland-script
+chmod +x install.sh
+./install.sh
