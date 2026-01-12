@@ -13,9 +13,8 @@ fi
 
 TMP_DIR="$(mktemp -d)"
 
-# Repo valide minimal
-DOTFILES_REPO="DOTFILES_REPO= "https://github.com/prasanthrangan/hyprdots.git"
-"
+# Repo valide
+DOTFILES_REPO="https://github.com/prasanthrangan/hyprdots.git"
 
 echo "Cloning dotfiles..."
 git clone "$DOTFILES_REPO" "$TMP_DIR"
@@ -25,8 +24,12 @@ mkdir -p "$CONFIG_TARGET"
 if [ -d "$CONFIG_TARGET" ] && [ "$(ls -A "$CONFIG_TARGET")" ]; then
     echo "Existing Hyprland config detected. Skipping copy."
 else
-    cp -r "$TMP_DIR/config/hypr/"* "$CONFIG_TARGET/" 2>/dev/null || \
-    cp -r "$TMP_DIR/"* "$CONFIG_TARGET/"
+    # hyprdots a une structure particulière
+    if [ -d "$TMP_DIR/config/hypr" ]; then
+        cp -r "$TMP_DIR/config/hypr/"* "$CONFIG_TARGET/"
+    else
+        cp -r "$TMP_DIR/"* "$CONFIG_TARGET/"
+    fi
     echo "Dotfiles installed successfully."
 fi
 
