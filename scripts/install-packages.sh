@@ -3,7 +3,7 @@ set -e
 
 echo "Installing Hyprland packages..."
 
-# Vérifier si on est sur un ISO live minimal
+
 if [ ! -f /etc/os-release ]; then
     echo "Warning: Cannot detect OS version. Assuming minimal ISO."
     ISO_SAFE=true
@@ -33,7 +33,8 @@ else
     )
 fi
 
-# Installer les paquets
+
 sudo pacman -Syu --needed --noconfirm "${PACKAGES[@]}"
 
 echo "Packages installed successfully."
+
