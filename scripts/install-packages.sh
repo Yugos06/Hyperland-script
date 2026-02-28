@@ -1,40 +1,41 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 echo "Installing Hyprland packages..."
 
+PACKAGES=(
+    hyprland
+    waybar
+    kitty
+    wofi
+    hyprpaper
+    swaync
+    grim
+    slurp
+    wl-clipboard
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
+    pipewire
+    wireplumber
+    pavucontrol
+    network-manager-applet
+    polkit-gnome
+    thunar
+    thunar-volman
+    gvfs
+    brightnessctl
+    playerctl
+)
 
-if [ ! -f /etc/os-release ]; then
-    echo "Warning: Cannot detect OS version. Assuming minimal ISO."
-    ISO_SAFE=true
+# Remove duplicates while preserving order.
+mapfile -t UNIQUE_PACKAGES < <(printf '%s\n' "${PACKAGES[@]}" | awk '!seen[$0]++')
+
+if [ "$EUID" -eq 0 ]; then
+    PACMAN_CMD=(pacman)
 else
-    ISO_SAFE=false
+    PACMAN_CMD=(sudo pacman)
 fi
 
-if [ "$ISO_SAFE" = true ]; then
-    echo "ISO live detected: installing safe minimal packages..."
-    PACKAGES=(
-        git
-        sudo
-        base-devel
-        less
-    )
-else
-    echo "Full Arch installation detected: installing Hyprland packages..."
-    PACKAGES=(
-        hyprland
-        waybar
-        kitty
-        wofi
-        grim
-        slurp
-        wl-clipboard
-        xdg-desktop-portal-hyprland
-    )
-fi
-
-
-sudo pacman -Syu --needed --noconfirm "${PACKAGES[@]}"
+"${PACMAN_CMD[@]}" -Syu --needed --noconfirm "${UNIQUE_PACKAGES[@]}"
 
 echo "Packages installed successfully."
-
